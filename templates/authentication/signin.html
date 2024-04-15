@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="page" class="site login-show">
+        <div class="container">
+            <div class="wrapper">
+                <div class="login">
+                    <div class="content-heading">
+                        <div class="y-style">
+                            <div class="welcome">
+                                <h2>Welcome <br>Back!</h2>
+                                <p>Online Voting Machine</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-form">
+                        <div class="y-style">
+                            <form action="/signin" method="post">
+                                {% csrf_token %}
+                                <p>
+                                    <label for="">username</label>
+                                    <input type="text"  name="username" placeholder="Enter Username" required>
+                                </p>
+                                <p>
+                                    <label for="">Password</label>
+                                    <input type="password" name="password" placeholder="Enter Password" required>
+                                    </p>
+                                <p>
+                                    <select name="security-question" required>
+                                        <option value=""disabled selected>Select Security Questiom</option>
+                                        <option value="q1">What is your pet's name?</option>
+                                        <option value="q2">What is your mother's maiden name?</option>
+                                        <option value="q3">What is the name of your first school?</option>
+                                    </select>
+                                    <input type="password" name="securityanswer" placeholder="Security Answer">
+                                </p>
+                                    <p><button type="submit">signin</button></p>
+                            </form>
+                            <div class="afterform">
+                                <p>Don't Have an Account?</p>
+                                <a href="/signup" class="t-signup">signup</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

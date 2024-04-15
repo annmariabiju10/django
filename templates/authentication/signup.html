@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="page" class="site signup-show">
+        <div class="container">
+            <div class="wrapper">
+                <div class="signup">
+                    <div class="content-heading">
+                        <div class="y-style">
+                            <div class="welcome">
+                                <h2>Sign Up <br>Now!</h2>
+                                <p>Online Voting Machine</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-form">
+                        <div class="y-style">
+                            <form action="/signup" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <p>
+                                    <label for="">Userid</label>
+                                    <input type="username" name="username" placeholder="Enter username" required/>
+                                </p>
+                                <p>
+                                    <label for="">Name</label>
+                                    <input type="text" name="name" placeholder="Enter Name" required/>
+                                </p>
+                                <p>
+                                    <label for="">Semester</label>
+                                    <input type="text" name="sem" placeholder="Enter Semester" required/>
+                                 </p>
+                                 <p>
+                                    <label for="">Class</label>
+                                    <input type="text" name="classd" placeholder="Enter class" required/>
+                                 </p>
+                                 <p>
+                                    <label for="">Email</label>
+                                    <input type="email" name="email" placeholder="Enter email" required/>
+                                 </p>
+                                <p>
+                                    <label for="">Password</label>
+                                    <input type="password" name="password" placeholder="Enter Password" required/>
+                                    </p>
+                                    <p> 
+                                        <label for=""> Confirm Password</label>
+                                        <input type="password" name="confirm" placeholder="Enter Password" required/>
+                                        </p>
+                                <p>
+                                    <select name="security-question" required>
+                                        <option value="" disabled selected>Select Security Question</option>
+                                        <option value="q1">What is your pet's name?</option>
+                                        <option value="q2">What is your mother's maiden name?</option>
+                                        <option value="q3">What is the name of your first school?</option>
+                                    </select>
+                                    <input type="password" name="security" placeholder="Security Answer" required>
+                                </p>
+                                    <input type="hidden" name="valid_form" value="1">
+                                    <p><button type="submit">Sign Up</button></p>
+                            </form>
+                            <div class="afterform">
+                                <p>Already have an account</p>
+                                <a href="/signin" class="t-login">Signin</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
